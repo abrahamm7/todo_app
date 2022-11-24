@@ -64,8 +64,14 @@ function App() {
                     <td>{task.title}</td>
                     <td>{task.state == false ? 'Not Completed' : 'Complete'}</td>
                     <td>
-                      <button className='btn btn-danger'>Edit</button>
-                      <button onClick={() => deleteTask(id)} className='btn btn-primary'>Delete</button>
+                      <div className='row'>
+                          <div className='col-2'>
+                              <button className='btn btn-danger'>Edit</button>
+                          </div>
+                          <div className='col-3'>
+                            <button onClick={() => deleteTask(id)} className='btn btn-primary'>Delete</button>
+                          </div>
+                      </div>
                     </td>
                   </tr>
                 </React.Fragment>
