@@ -9,6 +9,7 @@ function App() {
   ])
 
   const [newTask, setNewTask] = useState('');
+  //const [deletedTask, setRemoveTask] = useState('');
 
   const addTask = () => {
     if (newTask) {
@@ -20,6 +21,16 @@ function App() {
   }
 
   const deleteTask = (id) => {
+    if (id) {
+      const tempTaskList = [...toDoList];
+
+      tempTaskList.splice(id, 1);
+
+      setToDoList(tempTaskList);
+    }
+  }
+
+  const updateTask = (id, editedTask) => {
     
   }
 
@@ -54,7 +65,7 @@ function App() {
                     <td>{task.state == false ? 'Not Completed' : 'Complete'}</td>
                     <td>
                       <button className='btn btn-danger'>Edit</button>
-                      <button className='btn btn-primary'>Delete</button>
+                      <button onClick={() => deleteTask(id)} className='btn btn-primary'>Delete</button>
                     </td>
                   </tr>
                 </React.Fragment>
