@@ -9,7 +9,6 @@ function App() {
   ])
 
   const [newTask, setNewTask] = useState('');
-  //const [deletedTask, setRemoveTask] = useState('');
 
   const addTask = () => {
     if (newTask) {
@@ -35,14 +34,18 @@ function App() {
   }
 
   return (
-    <div className="container App">
+    <div className="container p-5 App">
       <h2>To Do List App</h2>
       {toDoList.length == 0 ? 'No task' : ''}
-
-      <div className='row'>
-        <div className='col'>
-          <input value={newTask} onChange={(e) => setNewTask(e.target.value)} placeholder='Add new task'></input>
-          <button onClick={addTask} className='btn btn-success'>Add task</button>
+      
+      <div className='container p-4'>
+        <div className='row'>
+          <div className='col-3'>
+            <input className='form-control' value={newTask} onChange={(e) => setNewTask(e.target.value)} placeholder='Add new task'></input>
+          </div>
+          <div className='col-2'>
+            <button onClick={addTask} className='btn btn-success'>Add task</button>
+          </div>
         </div>
       </div>
 
